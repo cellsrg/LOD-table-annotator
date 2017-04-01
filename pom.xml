@@ -9,10 +9,18 @@
 
   <name>ann</name>
   <url>http://maven.apache.org</url>
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <!-- Dependencies setup -->
 
   <dependencies>
     <dependency>
@@ -21,7 +29,15 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.cellsrg</groupId>
+      <artifactId>cells-ssdc</artifactId>
+      <version>master-SNAPSHOT</version>
+    </dependency>
   </dependencies>
+
+  <!-- Build setup -->
+
   <build>
     <plugins>
       <plugin>
@@ -57,12 +73,12 @@
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>ru.icc.cells.lod.ann.App</mainClass>
+            </manifest>
+          </archive>
         </configuration>
-        <archive>
-          <manifest>
-            <mainClass>ru.icc.cells.lod.ann.App</mainClass>
-          </manifest>
-        </archive>
         <executions>
           <execution>
             <id>make-assembly</id> <!-- this is used for inheritance merges -->
