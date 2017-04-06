@@ -13,7 +13,7 @@ install:
 	mvn install -Dmaven.test.skip=true
 
 run:
-	mvn mvn exec:java -Dexec.mainClass=$(MAIN_CLASS)
+	mvn exec:java -Dexec.mainClass=$(MAIN_CLASS)
 
 test:
 	mvn test
