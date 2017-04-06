@@ -13,4 +13,6 @@ hs_err_pid*
 /target
 /bin/
 workbench.xmi
-jython/Lib/site-package
+jython/Lib/site-packages/*
+jython/bin/*
+jython/man
