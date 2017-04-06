@@ -1,4 +1,4 @@
-#!/usr/bin/env /home/eugeneai/Development/soft/cells-group/LOD-table-annotator/target/jython
+#!/usr/bin/env /home/eugeneai/Development/soft/cells-group/LOD-table-annotator/jython/bin/jython
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==0.6c11','console_scripts','easy_install'
 __requires__ = 'setuptools==0.6c11'
 import sys
