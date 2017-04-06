@@ -1,4 +1,4 @@
-.PHOMY: build all run test build-test
+.PHOMY: build all run test build-test python python-mvn
 
 MAIN_CLASS=ru.icc.cells.lod.ann.App
 
@@ -17,3 +17,11 @@ run:
 
 test:
 	mvn test
+
+python:
+	bin/jython
+
+
+python-mvn:
+	mvn exec:java -Dexec.mainClass=org.python.util.jython \
+		-Dpython.home=./jython -Dpython.executable=./target/jython
