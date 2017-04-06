@@ -1,4 +1,5 @@
-.PHOMY: build all run test build-test python python-mvn
+.PHOMY: build all run test build-test python python-mvn \
+		run-mvn
 
 MAIN_CLASS=ru.icc.cells.lod.ann.App
 
@@ -12,14 +13,17 @@ build-test:
 install:
 	mvn install -Dmaven.test.skip=true
 
-run:
+run-mvn:
 	mvn exec:java -Dexec.mainClass=$(MAIN_CLASS)
+
+run:
+	java -jar target/ann-0.1-jar-with-dependencies.jar
 
 test:
 	mvn test
 
 python:
-	bin/jython
+	jython/bin/jython
 
 
 python-mvn:

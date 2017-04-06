@@ -2,4 +2,4 @@
 java -Xmx512m -Xss1024k \
      -classpath /home/eugeneai/.m2/repository/org/python/jython-standalone/2.7.1b3/jython-standalone-2.7.1b3.jar:./target/ann-0.1.jar:/home/eugeneai/.m2/repository \
 	 -Dpython.home=./jython -Dpython.executable=./target/jython \
-	 org.python.util.jython
+	 org.python.util.jython $*
