@@ -1,9 +1,12 @@
 .PHOMY: build all run test build-test python python-mvn \
-		run-mvn
+		run-mvn clean
 
 MAIN_CLASS=ru.icc.cells.lod.ann.App
 
 all: build
+
+clean:
+	mvn clean
 
 build: install
 
