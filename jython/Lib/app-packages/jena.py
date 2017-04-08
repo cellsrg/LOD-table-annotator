@@ -10,9 +10,9 @@ from org.apache.jena.rdf.model import Statement
 from org.apache.jena.rdf.model import StmtIterator
 from org.apache.jena.util import FileManager
 # from net.rootdev.javardfa.jena import RDFaReader
-from org.apache.jena.query import Query
+# from org.apache.jena.query import Query
 
-from java.lang import Class
+# from java.lang import Class
 
 import os.path
 

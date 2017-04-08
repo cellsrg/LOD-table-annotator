@@ -1,3 +1,4 @@
 import os.path
 
-import jena
+# import jena
+import ssdc

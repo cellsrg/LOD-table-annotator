@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from ru.icc.cells.ssdc import DataLoader
 from java.io import File
 from ru.icc.cells.ssdc.model import Tables
@@ -10,39 +12,83 @@ from org.kie.internal.builder import KnowledgeBuilderFactory
 from org.kie.internal.definition import KnowledgePackage
 from org.kie.internal.io import ResourceFactory
 from org.kie.internal.runtime import StatefulKnowledgeSession
+
+from org.kie.api.event.rule import DebugAgendaEventListener
+from org.kie.api.io import ResourceType
+
+import os
+
 CATMAN = CategoryTemplateManager.getInstance()
-KB = KnowledgeBaseFactory.newKnowledgeBase();
+KB = KnowledgeBaseFactory.newKnowledgeBase()
+DEBUG = True
 
 # Load rules.
 
+loader = DataLoader.getInstance()
+DIR = "examples"
+FILENAME = "T001.xlsx"
+DSL_PATH = "crl/crl.dsl"
 
-loader=DataLoader.getInstance()
-DIR="examples"
-FILENAME="T001.xlsx"
 
-book=File(os.path.join(DIR, FILENAME))
+def printTable(t):
+    for cell in t.getCells():
+        print(cell.getText())
+
+
+def loadRules():
+    builder = KnowledgeBuilderFactory.newKnowledgeBuilder()
+    dsl = ResourceFactory.newFileResource(DSL_PATH)
+    builder.add(dsl, ResourceType.DSL)
+    # builder.add(dslr, ResourceType.DSLR)
+
+    if builder.hasErrors():
+        raise RuntimeError("Cannot load rules!")
+    pkgs = builder.getKnowledgePackages()
+    KB.addKnowledgePackages(pkgs)
+
+
+def fireRules(table, kb):
+    session = kb.newStatefulKnowledgeSession()
+    if (DEBUG):
+        session.addEventListener(DebugAgendaEventListener())
+
+    for cell in table.getCells():
+        session.insert(cell)
+
+    for cat in table.getLocalCategoryBox().getCategories():
+        session.insert(cat)
+
+    session.fireAllRules()
+
+
+loadRules()
+
+book = File(os.path.join(DIR, FILENAME))
 loader.loadWorkbook(book)
 loader.goToSheet(0)
 tables = []
+print("Tables -------------- ")
 while True:
     t = loader.nextTable()
     if t is None:
         break
     tables.append(t)
+    # printTable(t)
 
-print(tables)
+# print(tables)
 
-for i,t in enumerate(tables):
-    print ("Processing {}".format(t))
+for i, t in enumerate(tables):
+    print("Processing {}".format(t))
     Tables.recoverCellBorders(t)
 
     if CATMAN.hasAtLeastOneCategoryTemplate():
-        CATEGORY_TEMPLATE_MANAGER.createCategories(t)
-        fireRules(t, KB)
+        CATMAN.createCategories(t)
+    fireRules(t, KB)
 
     t.update()
     print(t.trace())
-    cf=t.toCanonicalForm()
+    cf = t.toCanonicalForm()
     cf.print()
-    out = EvaluationExcelWriter(File(os.path.join(DIR,"{}.out-".format(i)+FILENAME)))
+    out = EvaluationExcelWriter(
+        File(os.path.join(DIR, "{}.out-".format(i) + FILENAME)))
     out.write(t)
