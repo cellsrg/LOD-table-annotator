@@ -1,0 +1,192 @@
+[
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#annotation",
+    "@type": [
+      "http://www.w3.org/ns/oa#Annotation"
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#main-document",
+    "http://www.w3.org/1999/xhtml/vocab#role": [
+      {
+        "@id": "http://www.w3.org/1999/xhtml/vocab#textbox"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#letter-of-attorney",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Document",
+      "http://schema.org/Article",
+      "http://dbpedia.org/resource/Power_of_attorney"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "ru",
+        "@value": "Доверенность"
+      },
+      {
+        "@language": "ru",
+        "@value": "на получение заработной платы"
+      }
+    ],
+    "http://www.omg.org/spec/EDMC-FIBO/BE/LegalEntities/LegalPersons/designatesSignatory": [
+      {
+        "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#principal"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#semantic-editor",
+    "@type": [
+      "http://rdfs.org/sioc/ns#Post",
+      "http://www.w3.org/ns/prov#Entity",
+      "http://schema.org/CreativeWork"
+    ]
+  },
+  {
+    "@id": "http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Organization"
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "ru",
+        "@value": "Отделом УФМС России по Иркутской области в Сведловском р-не гор. Иркутска"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Person",
+      "http://dbpedia.org/resource/AttorneyInFact"
+    ],
+    "http://www.w3.org/2006/vcard/ns#hasStreetAddress": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "Московская область, г. Мытищи, Олимпийский проспект, д. 23, кв. 14"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "Чесноковой Ирине Юрьевне"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/hasPassport": [
+      {
+        "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney-passport"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#principal",
+    "@type": [
+      "http://www.omg.org/spec/EDMC-FIBO/BE/LegalEntities/LegalPersons/Signatory",
+      "http://dbpedia.org/resource/Principal",
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "http://www.omg.org/spec/EDMC-FIBO/FND/Relations/Relations/confers": [
+      {
+        "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "Гирпа Елена Викторовна"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/primaryTopic": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "получить причитающуюся мне заработную плату за ноябрь 2012 г."
+      }
+    ],
+    "https://irnok.net/ontologies/documents/hasPassport": [
+      {
+        "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#signatory-passport"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#signatory-passport",
+    "@type": [
+      "https://privatealpha.com/ontology/certification/1#Certification"
+    ],
+    "http://purl.org/dc/terms/coverage": [
+      {
+        "@id": "http://dbpedia.org/resource/Russia"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#Date",
+        "@value": "2017-10-16"
+      }
+    ],
+    "http://www.w3.org/2006/vcard/ns#hasStreetAddress": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "Московская область, г. Мытищи, Олимпийский проспект, д. 23, кв. 14"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/issuer": [
+      {
+        "@id": "http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/number": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#Number",
+        "@value": "235648"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/series": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "5623"
+      }
+    ],
+    "https://privatealpha.com/ontology/certification/1#qualification": [
+      {
+        "@id": "http://dbpedia.org/resource/Passport"
+      }
+    ]
+  },
+  {
+    "@id": "http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney-passport",
+    "@type": [
+      "https://privatealpha.com/ontology/certification/1#Certification"
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#Date",
+        "@value": "2017-10-16"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/issuer": [
+      {
+        "@id": "http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/number": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#Number",
+        "@value": "235648"
+      }
+    ],
+    "https://irnok.net/ontologies/documents/series": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#String",
+        "@value": "5623"
+      }
+    ],
+    "https://privatealpha.com/ontology/certification/1#qualification": [
+      {
+        "@id": "http://dbpedia.org/resource/Passport"
+      }
+    ]
+  }
+]

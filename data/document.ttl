@@ -1,0 +1,97 @@
+@prefix acl: <http://www.w3.org/ns/auth/acl#> .
+@prefix acrt: <https://privatealpha.com/ontology/certification/1#> .
+@prefix adoc: <https://irnok.net/ontologies/documents/> .
+@prefix as: <https://www.w3.org/ns/activitystreams#> .
+@prefix biblio: <http://purl.org/net/biblio#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix book: <http://purl.org/NET/book/vocab#> .
+@prefix cal: <http://www.w3.org/2002/12/cal/ical#> .
+@prefix ccns: <https://creativecommons.org/ns#> .
+@prefix cert: <http://www.w3.org/ns/auth/cert#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctypes: <http://purl.org/dc/dcmitype/> .
+@prefix deo: <http://purl.org/spar/deo/> .
+@prefix dio: <https://w3id.org/dio#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix fibol: <http://www.omg.org/spec/EDMC-FIBO/BE/LegalEntities/LegalPersons/> .
+@prefix fiborel: <http://www.omg.org/spec/EDMC-FIBO/FND/Relations/Relations/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix ns1: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix opmw: <http://www.opmw.org/ontology/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pimspace: <http://www.w3.org/ns/pim/space#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsa: <http://www.w3.org/ns/auth/rsa#> .
+@prefix schema: <http://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix solid: <http://www.w3.org/ns/solid/terms#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#annotation> a oa:Annotation .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#letter-of-attorney> a dbr:Power_of_attorney,
+        schema:Article,
+        foaf:Document ;
+    dc:title "Доверенность"@ru,
+        "на получение заработной платы"@ru ;
+    fibol:designatesSignatory <http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#principal> .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#main-document> ns1:role ns1:textbox .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#semantic-editor> a sioc:Post,
+        schema:CreativeWork,
+        prov:Entity .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney> a dbr:AttorneyInFact,
+        foaf:Person ;
+    vcard:hasStreetAddress "Московская область, г. Мытищи, Олимпийский проспект, д. 23, кв. 14"^^xsd:String ;
+    foaf:name "Чесноковой Ирине Юрьевне"^^xsd:String ;
+    adoc:hasPassport <http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney-passport> .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney-passport> a acrt:Certification ;
+    dc:issued "2017-10-16"^^xsd:Date ;
+    adoc:issuer <http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html> ;
+    adoc:number "235648"^^xsd:Number ;
+    adoc:series "5623"^^xsd:String ;
+    acrt:qualification dbr:Passport .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#principal> a dbr:Principal,
+        fibol:Signatory,
+        foaf:Person ;
+    fiborel:confers <http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#attorney> ;
+    foaf:name "Гирпа Елена Викторовна"^^xsd:String ;
+    foaf:primaryTopic "получить причитающуюся мне заработную плату за ноябрь 2012 г."^^xsd:String ;
+    adoc:hasPassport <http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#signatory-passport> .
+
+<http://irnok.net:8080/95aa0538-1912-11e7-bb51-002354567223.xhtml#signatory-passport> a acrt:Certification ;
+    dc:coverage dbr:Russia ;
+    dc:issued "2017-10-16"^^xsd:Date ;
+    vcard:hasStreetAddress "Московская область, г. Мытищи, Олимпийский проспект, д. 23, кв. 14"^^xsd:String ;
+    adoc:issuer <http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html> ;
+    adoc:number "235648"^^xsd:Number ;
+    adoc:series "5623"^^xsd:String ;
+    acrt:qualification dbr:Passport .
+
+<http://ir-kutsk.ru/irkutskie-firmy/otdel-ufms-rf_3.html> a foaf:Organization ;
+    dc:title "Отделом УФМС России по Иркутской области в Сведловском р-не гор. Иркутска"@ru .
+
